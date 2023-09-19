@@ -17,10 +17,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en" data-theme="night">
+		<html lang="en" data-theme="dark">
 			<body className={inter.className}>
 				{/* <Navbar /> */}
-				<div className="flex  ">
+				<div className="flex flex-col md:flex-row  ">
 					<SideMenu />
 					<div className="w-full">{children}</div>
 				</div>

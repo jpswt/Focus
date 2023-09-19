@@ -1,30 +1,45 @@
-const SideMenu = () => {
-	return (
-		<div className=" flex min-h-screen flex-col bg-slate-700">
-			<div className="flex items-center gap-2 px-6 pb-20 pt-4 ">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					strokeWidth="1.5"
-					stroke="currentColor"
-					className="h-10 w-10 text-teal-600"
-				>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
-					/>
-					<path
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
-					/>
-				</svg>
+'use client';
 
-				<h1 className="text-xl">FOCUS</h1>
+import { useState } from 'react';
+import ToggleBtn from './ToggleBtn';
+
+const SideMenu = () => {
+	const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+
+	const handleToggle = () => {
+		setToggleMenu(!toggleMenu);
+	};
+	return (
+		<div className="flex-col bg-slate-700 md:flex md:min-h-screen">
+			<div className="flex items-center justify-between bg-red-400 px-6 py-4 md:pb-10 md:pt-4">
+				<div className="flex items-center gap-2  ">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						strokeWidth="1.5"
+						stroke="currentColor"
+						className="h-10 w-10 text-accent"
+					>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"
+						/>
+						<path
+							strokeLinecap="round"
+							strokeLinejoin="round"
+							d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"
+						/>
+					</svg>
+
+					<h1 className="text-xl">FOCUS</h1>
+				</div>
+				<div onClick={handleToggle} className=" block cursor-pointer md:hidden">
+					<ToggleBtn toggleMenu={toggleMenu} />
+				</div>
 			</div>
-			<ul className="menu  w-56 ">
+			<ul className=" menu  w-56 bg-red-600 ">
 				<li className="pb-6">
 					<a className="text-lg">
 						<svg
@@ -83,6 +98,7 @@ const SideMenu = () => {
 					</a>
 				</li>
 			</ul>
+			{/* Mobile */}
 		</div>
 	);
 };
