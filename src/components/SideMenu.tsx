@@ -17,7 +17,10 @@ const SideMenu = ({ toggleTheme }: Props) => {
 		<div className="flex-col bg-base-200 md:flex md:min-h-screen">
 			<div className="flex items-center justify-between px-6 py-4 md:pb-10 md:pt-4">
 				<div className="flex items-center gap-2  ">
-					<div onClick={toggleTheme}>
+					<div
+						onClick={toggleTheme}
+						className="cursor-pointer hover:opacity-80"
+					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
