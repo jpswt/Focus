@@ -1,11 +1,12 @@
 'use client';
 
-import Button from '@/components/Button';
+import Button from '@/components/ui/Button';
 import { CldUploadButton } from 'next-cloudinary';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 const UploadBtn = () => {
-	const [image, setImage] = useState('');
+	const router = useRouter();
 	return (
 		<Button stx="flex gap-2 items-center ">
 			<svg
@@ -26,8 +27,9 @@ const UploadBtn = () => {
 			<CldUploadButton
 				uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_PRESET}
 				onUpload={(result: any) => {
-					console.log(result.info.public_id);
-					setImage(result?.info?.public_id);
+					setTimeout(() => {
+						router.refresh();
+					}, 2000);
 				}}
 			/>
 		</Button>
