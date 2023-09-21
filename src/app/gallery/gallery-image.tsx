@@ -1,6 +1,6 @@
 'use client';
 import { CldImage } from 'next-cloudinary';
-import Favorite from './Favorite';
+import Favorite from '@/components/ui/Favorite';
 import { setFavorites } from '@/app/gallery/favorites';
 import { useState, useTransition } from 'react';
 import { Results } from '@/app/gallery/page';
@@ -9,10 +9,9 @@ type Props = {
 	source: string;
 	publicId: string;
 	image: Results;
-	removeFavorite: (resourceData: Results) => void;
 };
 
-const Image = ({ source, publicId, image, removeFavorite }: Props) => {
+const GalleryImage = ({ source, publicId, image }: Props) => {
 	const [transition, setTransition] = useTransition();
 
 	const [isFavorite, setIsFavorite] = useState(image.tags.includes('favorite'));
@@ -25,7 +24,6 @@ const Image = ({ source, publicId, image, removeFavorite }: Props) => {
 					className="absolute right-1 top-1 cursor-pointer"
 					onClick={() => {
 						setIsFavorite(false);
-						removeFavorite(image);
 						setTransition(() => {
 							setFavorites(publicId, false);
 						});
@@ -57,4 +55,4 @@ const Image = ({ source, publicId, image, removeFavorite }: Props) => {
 		</div>
 	);
 };
-export default Image;
+export default GalleryImage;

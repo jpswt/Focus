@@ -1,6 +1,7 @@
 import Image from '@/components/ui/CloudImage';
 
 import cloudinary from 'cloudinary';
+import FavoritesImages from './favorites-images';
 
 export type Results = {
 	public_id: string;
@@ -22,16 +23,7 @@ const GalleryPage = async () => {
 			<div>
 				<h1 className="text-xl ">Favorite Photos</h1>
 			</div>
-			<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
-				{result.resources.map((image) => (
-					<Image
-						source={image.public_id}
-						key={image.public_id}
-						publicId={image.public_id}
-						image={image}
-					/>
-				))}
-			</div>
+			<FavoritesImages initResource={result.resources} />
 		</section>
 	);
 };

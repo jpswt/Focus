@@ -1,6 +1,7 @@
 import Image from '@/components/ui/CloudImage';
 import UploadBtn from '../../components/ui/UploadBtn';
 import cloudinary from 'cloudinary';
+import GalleryImage from './gallery-image';
 
 export type Results = {
 	public_id: string;
@@ -17,6 +18,8 @@ const GalleryPage = async () => {
 
 	console.log(result);
 
+	const removeFav = () => {};
+
 	return (
 		<section className="p-5">
 			<div className="flex justify-between">
@@ -25,7 +28,7 @@ const GalleryPage = async () => {
 			</div>
 			<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
 				{result.resources.map((image) => (
-					<Image
+					<GalleryImage
 						source={image.public_id}
 						key={image.public_id}
 						publicId={image.public_id}

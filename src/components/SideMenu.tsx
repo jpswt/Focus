@@ -110,8 +110,8 @@ const SideMenu = ({ toggleTheme }: Props) => {
 			<ul
 				className={
 					toggleMenu
-						? 'top-18 menu fixed left-0 h-screen w-full items-center bg-base-200 duration-300 ease-in md:hidden '
-						: 'top-18 menu fixed left-[-100%] h-screen bg-slate-600 duration-300 ease-in '
+						? 'top-18 menu fixed left-0 z-10 h-screen w-full items-center bg-base-200 duration-300 ease-in md:hidden '
+						: 'top-18 menu fixed left-[-100%] z-10 h-screen bg-base-200 duration-300 ease-in '
 				}
 			>
 				<li className="w-full pb-6">
