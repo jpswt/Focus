@@ -1,7 +1,6 @@
-import Image from '@/components/ui/CloudImage';
-
 import cloudinary from 'cloudinary';
 import FavoritesImages from './favorites-images';
+import Reload from '@/components/ui/Reload';
 
 export type Results = {
 	public_id: string;
@@ -20,6 +19,7 @@ const GalleryPage = async () => {
 
 	return (
 		<section className="p-5">
+			<Reload />
 			<div>
 				<h1 className="text-xl ">Favorite Photos</h1>
 			</div>

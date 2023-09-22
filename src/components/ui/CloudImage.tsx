@@ -4,15 +4,17 @@ import Favorite from './Favorite';
 import { setFavorites } from '@/app/gallery/favorites';
 import { useState, useTransition } from 'react';
 import { Results } from '@/app/gallery/page';
+import { useRouter } from 'next/navigation';
 
 type Props = {
 	source: string;
 	publicId: string;
 	image: Results;
-	removeFavorite: (resourceData: Results) => void;
+	removeFavorite?: (resourceData: Results) => void;
 };
 
 const Image = ({ source, publicId, image, removeFavorite }: Props) => {
+	const router = useRouter();
 	const [transition, setTransition] = useTransition();
 
 	const [isFavorite, setIsFavorite] = useState(image.tags.includes('favorite'));
@@ -25,7 +27,7 @@ const Image = ({ source, publicId, image, removeFavorite }: Props) => {
 					className="absolute right-1 top-1 cursor-pointer"
 					onClick={() => {
 						setIsFavorite(false);
-						removeFavorite(image);
+						removeFavorite?.(image);
 						setTransition(() => {
 							setFavorites(publicId, false);
 						});
