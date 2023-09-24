@@ -13,7 +13,7 @@ const GalleryPage = async () => {
 		.expression('resource_type:image')
 		.with_field('tags')
 		.sort_by('created_at', 'desc')
-		.max_results(3)
+		.max_results(10)
 		.execute()) as { resources: Results[] };
 
 	console.log(result);

@@ -20,12 +20,12 @@ const FavoritesImages = ({ initResource }: { initResource: Results[] }) => {
 	}, [initResource]);
 
 	return (
-		<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
+		<div className=" mx-auto mt-10 flex w-full flex-1 columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
 			{resources.map((image) => (
 				<Image
 					source={image.public_id}
-					key={image.public_id}
 					publicId={image.public_id}
+					key={image.public_id}
 					image={image}
 					removeFavorite={handleRemoveFavorite}
 				/>
