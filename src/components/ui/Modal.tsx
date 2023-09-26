@@ -3,16 +3,12 @@
 import { Results } from '@/app/gallery/page';
 import { useState } from 'react';
 import { createAlbum } from '../CreateAlbum';
+import DropDown from '../DropDown';
 
 const Modal = ({ image }: { image: Results }) => {
 	const [album, setAlbum] = useState('');
 
-	const handleSubmit = async (e: any) => {
-		e.preventDefault();
-		await createAlbum(image, album);
-		setAlbum('');
-		console.log(image, album);
-	};
+	const [folderList, setFolderList] = useState('');
 
 	return (
 		<div className="absolute right-2 top-10">
@@ -64,6 +60,7 @@ const Modal = ({ image }: { image: Results }) => {
 						onChange={(e) => setAlbum(e.currentTarget.value)}
 						value={album}
 					/>
+					{/* <GetFolders /> */}
 					<div className="modal-action text-right">
 						<button
 							className="btn btn-primary"

@@ -28,6 +28,7 @@ const FavoritesImages = ({ initResource }: { initResource: Results[] }) => {
 					key={image.public_id}
 					image={image}
 					removeFavorite={handleRemoveFavorite}
+					alt=""
 				/>
 			))}
 		</div>

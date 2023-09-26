@@ -12,6 +12,7 @@ type Props = {
 	source: string;
 	publicId: string;
 	image: Results;
+	alt: String;
 
 	removeFavorite?: (resourceData: Results) => void;
 };
@@ -58,7 +59,7 @@ const Image = ({ source, publicId, image, removeFavorite }: Props) => {
 				src={source ? source : '0'}
 				sizes="100vw"
 				alt="Description of my image"
-				style={{ marginBottom: '1rem`' }}
+				style={{ marginBottom: '1rem' }}
 			/>
 			{/* <DropMenu /> */}
 			<Modal image={image} />
