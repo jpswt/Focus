@@ -19,7 +19,7 @@ const GalleryPage = async () => {
 	console.log(result);
 
 	const folders = await cloudinary.v2.api.root_folders();
-	console.log(folders);
+	console.log('gallery list of folders', folders);
 
 	return (
 		<section className="p-5">

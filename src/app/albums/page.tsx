@@ -10,8 +10,11 @@ export type Results = {
 
 const AlbumsPage = async () => {
 	const folders = await cloudinary.v2.api.root_folders();
+	console.log(folders);
 
-	console.log('Here is folders', folders);
+	const content = await cloudinary.v2.api.resources();
+
+	console.log('content', content.resources);
 
 	return (
 		<section className=" min-h-full  p-5">

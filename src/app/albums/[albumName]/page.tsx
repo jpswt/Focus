@@ -2,6 +2,7 @@ import Image from '@/components/ui/CloudImage';
 import UploadBtn from '../../../components/ui/UploadBtn';
 import cloudinary from 'cloudinary';
 import Reload from '@/components/ui/Reload';
+import AlbumImages from './album-images';
 
 export type Results = {
 	public_id: string;
@@ -29,7 +30,8 @@ const AlbumGalleryPage = async ({
 				<h1 className="text-xl ">My Photos</h1>
 				<UploadBtn />
 			</div>
-			<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
+			<AlbumImages initResource={result.resources} />
+			{/* <div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
 				{result.resources.map((image) => (
 					<Image
 						source={image.public_id}
@@ -39,7 +41,7 @@ const AlbumGalleryPage = async ({
 						alt=""
 					/>
 				))}
-			</div>
+			</div> */}
 		</section>
 	);
 };
