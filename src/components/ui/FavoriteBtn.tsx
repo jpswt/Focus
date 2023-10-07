@@ -4,9 +4,9 @@ type Props = {
 	fill: string;
 };
 
-const Favorite = ({ stx, stroke, fill }: Props) => {
+const FavoriteBtn = ({ stx, stroke, fill }: Props) => {
 	return (
-		<div className="rounded-md bg-neutral p-1 opacity-80">
+		<div className="rounded-md bg-neutral p-1 opacity-90">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill={fill}
@@ -24,4 +24,4 @@ const Favorite = ({ stx, stroke, fill }: Props) => {
 		</div>
 	);
 };
-export default Favorite;
+export default FavoriteBtn;

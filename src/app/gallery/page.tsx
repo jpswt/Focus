@@ -28,7 +28,7 @@ const GalleryPage = async () => {
 				<h1 className="text-xl ">My Photos</h1>
 				<UploadBtn />
 			</div>
-			<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 ">
+			<div className=" mx-auto mt-10 flex w-full columns-1 flex-col items-center md:block md:columns-2 lg:columns-3 xl:columns-4 ">
 				{result.resources.map((image) => (
 					<Image
 						source={image.public_id}
