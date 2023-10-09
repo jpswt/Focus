@@ -27,15 +27,15 @@ const Modify = ({ searchParams: { id } }: { searchParams: { id: string } }) => {
 	};
 
 	const onUpload = async (file: any) => {
-		// await cloudinary.v2.uploader.upload(id);
+		await cloudinary.v2.uploader.upload(id);
 
-		axios
-			.post('https://api.cloudinary.com/v1_1/dsodhijhd/image/upload', {
-				file,
-			})
-			.then((res) => {
-				console.log(res);
-			});
+		// axios
+		// 	.post('https://api.cloudinary.com/v1_1/dsodhijhd/image/upload', {
+		// 		file,
+		// 	})
+		// 	.then((res) => {
+		// 		console.log(res);
+		// 	});
 	};
 
 	return (
